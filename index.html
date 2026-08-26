@@ -349,47 +349,46 @@
         /* ── Print ── */
         @media print {
             @page {
-                size: A4;
-                margin: 0.6in 0.65in;
+                size: A4 portrait;
+                margin: 12mm 15mm;
             }
 
-            body {
-                background: white;
-                font-size: 12.5px;
+            html, body {
+                width: 100% !important;
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                background: #ffffff !important;
+                color: #111111 !important;
+                font-size: 10pt;
             }
 
             .resume {
-                box-shadow: none;
-                margin: 0;
-                max-width: none;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
             }
 
             .header {
-                padding: 20px 0 16px;
                 background: var(--slate-dark) !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
 
-            .content {
-                padding: 20px 0 0;
-            }
-
-            .section {
-                margin-bottom: 16px;
-                break-inside: avoid;
-            }
-
-            .exp-block {
-                break-inside: avoid;
-            }
-
-            .edu-item {
+            section, .section, .exp-block, .edu-item, .research-item, .awards-list li, .workshop-list li {
+                page-break-inside: avoid;
                 break-inside: avoid;
             }
 
             .page-break-before {
                 page-break-before: always;
+            }
+
+            .print-btn, nav, footer, .no-print {
+                display: none !important;
             }
         }
 
