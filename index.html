@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Bhakti M Tolamatti - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --slate: #334155;
+            --slate-dark: #1e293b;
+            --slate-light: #64748b;
+            --forest: #2d6a4f;
+            --forest-light: #40916c;
+            --border: #cbd5e1;
+            --border-light: #e2e8f0;
+            --bg-page: #f1f5f9;
+            --bg-card: #ffffff;
+            --bg-subtle: #f8fafc;
+            --bg-accent: #f1f5f9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--slate-dark);
+            background: var(--bg-page);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .resume {
+            max-width: 800px;
+            margin: 24px auto;
+            background: var(--bg-card);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+
+        /* ── Header ── */
+        .header {
+            background: var(--slate-dark);
+            color: white;
+            padding: 32px 44px 28px;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.85em;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            margin-bottom: 4px;
+        }
+
+        .header .subtitle {
+            font-size: 0.92em;
+            font-weight: 400;
+            opacity: 0.88;
+            margin-bottom: 2px;
+            letter-spacing: 0.4px;
+        }
+
+        .header .credentials {
+            font-size: 0.82em;
+            opacity: 0.65;
+            margin-bottom: 14px;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 20px;
+            font-size: 0.85em;
+            opacity: 0.9;
+        }
+
+        .contact-row a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-item svg {
+            width: 13px;
+            height: 13px;
+            fill: currentColor;
+            opacity: 0.7;
+            flex-shrink: 0;
+        }
+
+        /* ── Content ── */
+        .content {
+            padding: 28px 44px 36px;
+        }
+
+        .section {
+            margin-bottom: 22px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05em;
+            font-weight: 700;
+            color: var(--slate-dark);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1.5px solid var(--slate);
+        }
+
+        /* ── Summary ── */
+        .summary-text {
+            font-size: 0.88em;
+            color: var(--slate-light);
+            line-height: 1.6;
+        }
+
+        /* ── Clinical Competencies ── */
+        .competencies-list {
+            list-style: none;
+            font-size: 0.88em;
+        }
+
+        .competencies-list li {
+            padding: 4px 0;
+            color: var(--slate);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .competencies-list li:last-child {
+            border-bottom: none;
+        }
+
+        .competencies-list strong {
+            color: var(--slate-dark);
+            font-weight: 600;
+        }
+
+        /* ── Experience ── */
+        .exp-block {
+            margin-bottom: 16px;
+        }
+
+        .exp-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 2px;
+        }
+
+        .exp-header h3 {
+            font-size: 0.92em;
+            font-weight: 600;
+            color: var(--slate-dark);
+        }
+
+        .exp-header .duration {
+            font-size: 0.82em;
+            color: var(--slate-light);
+        }
+
+        .exp-org {
+            font-size: 0.85em;
+            color: var(--forest);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .exp-block ul {
+            padding-left: 16px;
+            font-size: 0.85em;
+            color: var(--slate);
+            line-height: 1.5;
+        }
+
+        .exp-block ul li {
+            margin-bottom: 2px;
+        }
+
+        /* ── Workshop List ── */
+        .sub-heading {
+            font-size: 0.88em;
+            font-weight: 600;
+            color: var(--slate-dark);
+            margin: 12px 0 6px;
+        }
+
+        .workshop-list {
+            list-style: none;
+            font-size: 0.85em;
+        }
+
+        .workshop-list li {
+            padding: 4px 0;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--slate);
+        }
+
+        .workshop-list li:last-child {
+            border-bottom: none;
+        }
+
+        .workshop-list strong {
+            color: var(--slate-dark);
+            font-weight: 600;
+        }
+
+        .workshop-list .detail {
+            color: var(--slate-light);
+        }
+
+        /* ── Research ── */
+        .research-item {
+            margin-bottom: 8px;
+        }
+
+        .research-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .research-item h3 {
+            font-size: 0.88em;
+            font-weight: 600;
+            color: var(--slate-dark);
+            margin-bottom: 1px;
+        }
+
+        .research-item .study {
+            font-size: 0.85em;
+            color: var(--slate);
+            font-style: italic;
+        }
+
+        .research-item .pub-detail {
+            font-size: 0.82em;
+            color: var(--slate-light);
+        }
+
+        /* ── Education ── */
+        .edu-item {
+            margin-bottom: 12px;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .edu-header h3 {
+            font-size: 0.88em;
+            font-weight: 600;
+            color: var(--slate-dark);
+        }
+
+        .edu-header .date {
+            font-size: 0.8em;
+            color: var(--slate-light);
+        }
+
+        .edu-org {
+            font-size: 0.82em;
+            color: var(--forest);
+            font-weight: 500;
+        }
+
+        .edu-affiliation {
+            font-size: 0.78em;
+            color: var(--slate-light);
+            font-style: italic;
+        }
+
+        .edu-score {
+            font-size: 0.85em;
+            color: var(--slate);
+            margin-top: 2px;
+        }
+
+        .pro-list {
+            margin-top: 3px;
+            padding-left: 16px;
+            font-size: 0.82em;
+            color: var(--slate);
+        }
+
+        .pro-list li {
+            margin-bottom: 1px;
+        }
+
+        .pro-list li strong {
+            color: var(--slate-dark);
+        }
+
+        /* ── Awards ── */
+        .awards-list {
+            list-style: none;
+            font-size: 0.85em;
+        }
+
+        .awards-list li {
+            padding: 4px 0;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--slate);
+        }
+
+        .awards-list li:last-child {
+            border-bottom: none;
+        }
+
+        .awards-list strong {
+            color: var(--slate-dark);
+            font-weight: 600;
+        }
+
+        .awards-list .detail {
+            color: var(--slate-light);
+        }
+
+        /* ── Print ── */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0.6in 0.65in;
+            }
+
+            body {
+                background: white;
+                font-size: 12.5px;
+            }
+
+            .resume {
+                box-shadow: none;
+                margin: 0;
+                max-width: none;
+            }
+
+            .header {
+                padding: 20px 0 16px;
+                background: var(--slate-dark) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .content {
+                padding: 20px 0 0;
+            }
+
+            .section {
+                margin-bottom: 16px;
+                break-inside: avoid;
+            }
+
+            .exp-block {
+                break-inside: avoid;
+            }
+
+            .edu-item {
+                break-inside: avoid;
+            }
+
+            .page-break-before {
+                page-break-before: always;
+            }
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 700px) {
+            .header, .content {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .header h1 {
+                font-size: 1.45em;
+            }
+            .contact-row {
+                flex-direction: column;
+                gap: 4px;
+            }
+            .resume {
+                margin: 0;
+            }
+            .exp-header {
+                flex-direction: column;
+            }
+            .edu-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+
+        <!-- HEADER -->
+        <div class="header">
+            <h1>Dr. Bhakti M. Tolamatti</h1>
+            <div class="subtitle">BAMS &nbsp;|&nbsp; Ayurvedic Clinician &nbsp;|&nbsp; Certified Dietitian &amp; Nutritionist &nbsp;|&nbsp; Researcher</div>
+            <div class="credentials">KAUP Reg. No: 60530 (Registered: Oct 30, 2025 | Lifetime Practitioner)</div>
+            <div class="contact-row">
+                <span class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+                    <a href="tel:+917483514327">+91 7483514327</a>
+                </span>
+                <span class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <a href="mailto:drbhaktimt@gmail.com">drbhaktimt@gmail.com</a>
+                </span>
+                <span class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+                    Bengaluru, Karnataka, India
+                </span>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <!-- SUMMARY -->
+            <section class="section">
+                <h2 class="section-title">Summary</h2>
+                <p class="summary-text">KAUP-registered Ayurvedic Physician (BAMS) with comprehensive OPD/IPD experience from SDM Institute of Ayurveda &amp; Hospital. Proficient in managing patient consultations, Panchakarma regimens, and customized Ayurvedic dietetics. Demonstrated research background in RGUHS grant-funded studies, clinical trial execution, and scientific publication. Skilled in integrating classic Ayurvedic diagnostic principles with evidence-based clinical practice.</p>
+            </section>
+
+            <!-- CLINICAL COMPETENCIES -->
+            <section class="section">
+                <h2 class="section-title">Clinical Competencies &amp; Specialities</h2>
+                <ul class="competencies-list">
+                    <li><strong>Diagnostic &amp; Procedural Skills:</strong> OPD/IPD Patient Care, Nadi Pariksha, Panchakarma Protocol Planning, Agni Karma, Viddha Karma</li>
+                    <li><strong>Clinical Focus Areas:</strong> Ayurvedic Dietetics &amp; Clinical Nutrition, Women's Health (Stree Roga), Pain Management, Preventive &amp; Lifestyle Care</li>
+                    <li><strong>Research &amp; Academic:</strong> Clinical Trial Execution, Literature Review, Case Documentation, Scientific Writing</li>
+                    <li><strong>Languages Spoken:</strong> Kannada, English, Hindi (Fluent in patient consultation)</li>
+                </ul>
+            </section>
+
+            <!-- CLINICAL EXPERIENCE -->
+            <section class="section">
+                <h2 class="section-title">Clinical Experience &amp; Certifications</h2>
+
+                <div class="exp-block">
+                    <div class="exp-header">
+                        <h3>Compulsory Rotating Resident Intern (Completed)</h3>
+                        <span class="duration">Sept 2024 &ndash; Sept 2025</span>
+                    </div>
+                    <div class="exp-org">SDM Institute of Ayurveda &amp; Hospital, Bengaluru</div>
+                    <ul>
+                        <li>Completed 1-year clinical rotation across Prasuti Tantra &amp; Stree Roga, Panchakarma, Kayachikitsa, Shalya Tantra, Shalakya Tantra, and Kaumarabhritya.</li>
+                        <li>Managed emergency/routine inpatient care, conducted daily outpatient consultations, and administered specialized Panchakarma procedures.</li>
+                    </ul>
+                </div>
+
+                <h3 class="sub-heading">Clinical Certifications &amp; Advanced Workshops</h3>
+                <ul class="workshop-list">
+                    <li><strong>Agni &amp; Viddha Karma Hands-On Clinical Workshop</strong> <span class="detail">| Lil&#257; Academy of Ayurveda Studies (Jul 2025)</span></li>
+                    <li><strong>Tatwaprakashini 23 ("Chikitsa") Clinical Training</strong> <span class="detail">| Arya Vaidya Pharmacy Hospital (Oct &ndash; Nov 2023)</span></li>
+                    <li><strong>SADHANAM 10-Day Residential Clinical Training</strong> <span class="detail">| Ayurveda Academy (Sept 2022)</span></li>
+                    <li><strong>Dietetics, Nutrition &amp; Immunity through Ayurveda</strong> <span class="detail">| National Institute of Ayurveda (NIA), Jaipur (Jun &ndash; Jul 2021)</span></li>
+                </ul>
+            </section>
+
+            <!-- RESEARCH & PUBLICATIONS -->
+            <section class="section">
+                <h2 class="section-title">Research &amp; Publications</h2>
+
+                <div class="research-item">
+                    <h3>Principal Investigator | RGUHS Research Grant Project (June 2023)</h3>
+                    <p class="study">"A Clinical Study of Kottamchukkadi Lepa in Breast Fibroadenoma"</p>
+                    <p class="pub-detail">Awarded Research Grant Completion Certificate by Rajiv Gandhi University of Health Sciences (RGUHS), Karnataka.</p>
+                </div>
+
+                <div class="research-item">
+                    <h3>Book Chapter Author | Iterative International Publishers (April 2024)</h3>
+                    <p class="pub-detail">Authored chapter in "Futuristic Trends in Medical Sciences" (Vol 3, Book 25).</p>
+                </div>
+            </section>
+
+            <!-- EDUCATION -->
+            <section class="section page-break-before">
+                <h2 class="section-title">Education &amp; Academic Credentials</h2>
+
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <h3>Bachelor of Ayurvedic Medicine and Surgery (BAMS)</h3>
+                    </div>
+                    <div class="edu-org">SDM Institute of Ayurveda &amp; Hospital, Bengaluru</div>
+                    <div class="edu-affiliation">Affiliated to Rajiv Gandhi University of Health Sciences (RGUHS) | Total: 3,267 / 4,500 (72.60% &mdash; First Class)</div>
+                    <ul class="pro-list">
+                        <li>Fourth Professional (Jul 2024): <strong>854 / 1,150</strong></li>
+                        <li>Third Professional (Mar 2023): <strong>781 / 1,050</strong></li>
+                        <li>Second Professional (Feb 2022): <strong>908 / 1,250</strong></li>
+                        <li>First Professional (Feb 2021): <strong>724 / 1,050</strong></li>
+                    </ul>
+                </div>
+
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <h3>Pre-University Course (12th Grade - PCMB)</h3>
+                        <span class="date">March 2019</span>
+                    </div>
+                    <div class="edu-org">Alva's PU College, Moodbidri</div>
+                    <div class="edu-score">Aggregate Score: <strong>565 / 600 (94.17% &mdash; Distinction)</strong></div>
+                </div>
+
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <h3>Secondary School Examination (10th Grade)</h3>
+                        <span class="date">2017</span>
+                    </div>
+                    <div class="edu-org">VSS International Public School, Bengaluru</div>
+                    <div class="edu-score">CGPA: <strong>10.0 / 10.0</strong> (A1 Grade across all subjects)</div>
+                </div>
+            </section>
+
+            <!-- AWARDS & PRESENTATIONS -->
+            <section class="section">
+                <h2 class="section-title">Awards &amp; Presentations</h2>
+                <ul class="awards-list">
+                    <li><strong>Best Paper / Poster Award</strong> <span class="detail">| Agni Manthana National Seminar, SDM Institute of Ayurveda (Feb 2024)</span></li>
+                    <li><strong>Best Oral Presenter</strong> <span class="detail">| Trishula Conference on Pain &amp; Inflammation, JSS Ayurveda Medical College (Sept 2023)</span></li>
+                    <li><strong>Presenter</strong> <span class="detail">| Charaka Nirupanam National Clinical Competition (Aug 2023)</span></li>
+                    <li><strong>1st Prize</strong> <span class="detail">| Ayurgrama National Ayurveda Contest (Charaka Jayanti Outreach Category) (Aug 2022)</span></li>
+                    <li><strong>Delegate</strong> <span class="detail">| World Ayurveda Congress, Panjim, Goa (Dec 2022) &amp; Jignasa Arogya Fair, Bengaluru (Jul 2022)</span></li>
+                    <li><strong>Consolation Prize</strong> <span class="detail">| VAGAYU National E-Elocution Competition, Govt. Ayurveda Research Center, Mysuru (Nov 2020)</span></li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+</body>
+</html>
